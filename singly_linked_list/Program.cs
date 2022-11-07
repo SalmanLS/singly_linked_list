@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Runtime.InteropServices;
 
 namespace single_linked_list
 {
@@ -61,10 +63,16 @@ namespace single_linked_list
 
 
         }
-        public bool delNode(int rollNO)
+        public bool delNode(int rollNo)
         {
             Node previous, current;
-
+            previous = current = null;
+            if (Search(rollNo, ref previous, ref current)== false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
         }
     }
 

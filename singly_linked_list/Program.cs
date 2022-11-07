@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
 
@@ -126,6 +127,71 @@ namespace single_linked_list
                     Console.WriteLine("3. View all the records in the list");
                     Console.WriteLine("4. Search for a second in the list");
                     Console.WriteLine("5. Exit");
+                    Console.Write("\n Enter your choice (1-5) : ");
+                    char ch = Convert.ToChar(Console.ReadLine());
+                    switch (ch)
+                    {
+                        case '1':
+                            {
+                                obj.addNote();
+                            }
+                            break;
+                        case '2':
+                            {
+                                if (obj.listEmpty())
+                                {
+                                    Console.WriteLine("\n List is empty");
+                                    break;
+                                }
+                                Console.WriteLine("Enter the roll number of" + "the student whose record is to be deleted: ");
+                                int rollNo =  Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                if (obj.delNode(rollNo) == false)
+                                    Console.WriteLine("\n Record not found.");
+                                else
+                                    Console.WriteLine("Record with roll number" + rollNo + "Deleted");
+                                
+                            }
+                            break;
+                        case '3':
+                            {
+                                obj.Traverse();
+                            }
+                            break;
+                        case '4':
+                            {
+                                if(obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\n List is empty");
+                                    break;
+                                }
+                                Node previous, current;
+                                previous = current = null;
+                                Console.Write("\n Enter the roll number of the " + "Student whose record is to be searched: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref previous, ref current) ==  false)
+                                    Console.WriteLine("\n Record not found.");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord not found");
+                                    Console.WriteLine("\nRoll number: " + current.rollNumber);
+                                    Console.WriteLine("\nName: " + current.name);
+                                }
+                            }
+                            break;
+                        case '5':
+                            {
+                                Console.WriteLine("\n Invalid option");
+                                break;
+
+                            }
+                            break;
+                    }
+
+                }
+                catch ()
+                {
+
                 }
             }
         }

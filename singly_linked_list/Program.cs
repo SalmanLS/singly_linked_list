@@ -31,7 +31,7 @@ namespace single_linked_list
             newnode.rollNumber = rollNo;
             newnode.name = nm;
             // if the node to be inserted is the first node
-            if(START != null || (rollNo <= START.rollNumber))
+            if (START != null || (rollNo <= START.rollNumber))
             {
                 if ((START != null)&&(rollNo == START.rollNumber))
                 {
@@ -110,5 +110,24 @@ namespace single_linked_list
             else
                 return false;
         }
-
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List obj = new List();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("\n MENU");
+                    Console.WriteLine("1. Add a record to the list");
+                    Console.WriteLine("2. Delete a record from the list");
+                    Console.WriteLine("3. View all the records in the list");
+                    Console.WriteLine("4. Search for a second in the list");
+                    Console.WriteLine("5. Exit");
+                }
+            }
+        }
+    }
 }

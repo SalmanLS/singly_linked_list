@@ -88,5 +88,18 @@ namespace single_linked_list
             else
                 return true;
         }
+        public void Traverse()
+        {
+            if (listEmpty())
+            {
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine();
+                Node currentNode;
+                for(currentNode = START; currentNode != null; currentNode = currentNode.next)
+            }
+        }
 
 }

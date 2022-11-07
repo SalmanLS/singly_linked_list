@@ -92,13 +92,15 @@ namespace single_linked_list
         {
             if (listEmpty())
             {
-                Console.WriteLine();
+                Console.WriteLine("\n The records in the list are: ");
             }
             else
             {
-                Console.WriteLine();
+                Console.WriteLine("\n The records in the list are:");
                 Node currentNode;
-                for(currentNode = START; currentNode != null; currentNode = currentNode.next)
+                for (currentNode = START; currentNode != null; currentNode = currentNode.next)
+                    Console.Write(currentNode.rollNumber + "" + currentNode.name + "\n");
+                Console.WriteLine();
             }
         }
 

@@ -42,14 +42,25 @@ namespace single_linked_list
             }
 
             Node previous, current;
-            while ()
+            previous = START;
+            current = START;
+
+            while ((current != null)&&(rollNo >= current.rollNumber))
             {
-                if ()
+                if (rollNo == current.rollNumber)
                 {
-
+                    Console.WriteLine();
+                    return;
                 }
-            }
 
+            }
+            previous.next = current;
+            previous.next = newnode;
+
+
+        }
+        public bool delNode()
+        {
 
         }
     }

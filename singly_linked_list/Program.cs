@@ -180,6 +180,8 @@ namespace single_linked_list
                             }
                             break;
                         case '5':
+                            return;
+                        default:
                             {
                                 Console.WriteLine("\n Invalid option");
                                 break;
@@ -189,9 +191,9 @@ namespace single_linked_list
                     }
 
                 }
-                catch ()
+                catch (Exception)
                 {
-
+                    Console.WriteLine("\n Check for the value enterd");
                 }
             }
         }
